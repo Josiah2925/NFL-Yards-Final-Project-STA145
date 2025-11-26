@@ -1,0 +1,13 @@
+Table 1: Descriptive Statistics,,,,,
+,Mean,SD,Min,Max,Description
+Yards Per Play,5.28,0.93,3.4,7.11,Average offensive efficiency measured by yards gained per offensive play.
+Rushing Yards,120,49.7,7,215,Total rushing yards gained by the offense in a game.
+Qualitiative,,,,,
+Category 1,,,,,Total rushing yards gained by the offense in a game.
+Category 2,,,,,Teams that lost the game
+Category K,,,,,Description of last category here (add more rows if more than 3 categories!)
+Qualitative Variable 2,,,,,Description of Qualititative Variable 2 here
+Category 1,,,,,Description of category 1 here
+Category 2,,,,,Description of category 2 here
+Category K,,,,,Description of last category here (add more rows if more than 3 categories!)
+n = 66,,,,,
