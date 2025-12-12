@@ -14,6 +14,7 @@ setwd("/courses/STA145/noblej3")
 library(readr)
 library(dplyr)        # needed for filter(), %>%, etc.
 library(psych)        # optional, for describe()
+library(ggplot2)      # needed for function of Linear Regression
 
 ##############################
 ### 3. Load Data
@@ -87,22 +88,23 @@ abline(h = mean(data_complete$Yards_per_play), col = "black", lwd = 2)
 ##############################
 ### 8. Linear Regression
 ##############################
-model <- lm(yards_per_play ~ rushing_yards, data = data_complete)
+model <- lm(Yards_per_play ~ rushing_yards, data = data_complete)
 summary(model)
 
 # Add regression line
-abline(col = "red", lwd = 2)
+ggplot(data_complete, aes(x = Yards_per_play, y = rushing_yards)) +
+  geom_point() +  # scatter plot
+  geom_smooth(method = "lm", se = TRUE, color = "red") 
 
 ##############################
 ### 9. Residual Plot (Figure 3)
 ##############################
 plot(
-  data_complete$rushing_yards,
-  residuals(rushing_yards),
-  main = "Residual Plot",
-  xlab = "Rushing Yards",
+  fitted(model),
+  residuals(model),
+  main = "Residuals vs Fitted",
+  xlab = "Fitted Values",
   ylab = "Residuals",
   pch = 19
 )
-
-abline(h = 0, col = "darkblue", lwd = 2)
+abline(h = 0, col = "darkgreen", lwd = 2)
