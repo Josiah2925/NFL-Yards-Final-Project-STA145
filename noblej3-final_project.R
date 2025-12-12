@@ -25,7 +25,7 @@ View(data)
 ### 4. Complete-Case Dataset
 ##############################
 data_complete <- data %>%
-  filter(complete.cases(yards_per_play, rushing_yards))
+  filter(complete.cases(select(., Yards_per_play, rushing_yards)))
 
 ##############################
 ### 5. Descriptive Statistics
